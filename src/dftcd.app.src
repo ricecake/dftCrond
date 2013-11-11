@@ -5,7 +5,9 @@
   {registered, []},
   {applications, [
                   kernel,
-                  stdlib
+                  stdlib,
+		  lager,
+		  rafter
                  ]},
   {mod, { dftcd_app, []}},
   {env, []}
