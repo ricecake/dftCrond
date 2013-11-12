@@ -6,7 +6,7 @@
 %% API Function Exports
 %% ------------------------------------------------------------------
 
--export([start_link/0]).
+-export([start_link/0, apply/1, run_job/3]).
 
 %% ------------------------------------------------------------------
 %% gen_server Function Exports
@@ -21,6 +21,12 @@
 
 start_link() ->
     gen_server:start_link({local, ?SERVER}, ?MODULE, [], []).
+
+apply(Command) ->
+	{ok, Command}.
+
+run_job(Name, LocalOrDist, Args) ->
+	{ok, Name}.
 
 %% ------------------------------------------------------------------
 %% gen_server Function Definitions
@@ -47,4 +53,3 @@ code_change(_OldVsn, State, _Extra) ->
 %% ------------------------------------------------------------------
 %% Internal Function Definitions
 %% ------------------------------------------------------------------
-
