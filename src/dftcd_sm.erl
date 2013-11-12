@@ -25,7 +25,7 @@ start_link() ->
 apply(Command) ->
 	{ok, Command}.
 
-run_job(Name, LocalOrDist, Args) ->
+run_job(Name, _LocalOrDist, _Args) ->
 	{ok, Name}.
 
 %% ------------------------------------------------------------------
@@ -40,6 +40,8 @@ handle_call(_Request, _From, State) ->
 
 handle_cast(_Msg, State) ->
     {noreply, State}.
+
+handle_info({nodedown, _Node}, State) -> {noreply, State};
 
 handle_info(_Info, State) ->
     {noreply, State}.
