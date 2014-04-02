@@ -22,6 +22,10 @@
 start_link() ->
     gen_server:start_link({local, ?SERVER}, ?MODULE, [], []).
 
+apply({join,Node)
+apply({down,Node)
+apply({kick,Node)
+apply({cron,Details)
 apply(Command) ->
 	{ok, Command}.
 
