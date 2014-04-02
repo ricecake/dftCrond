@@ -7,7 +7,6 @@
                   kernel,
                   stdlib,
 		  lager,
-		  rafter,
 		  crontab
                  ]},
   {mod, { dftcd_app, []}},
